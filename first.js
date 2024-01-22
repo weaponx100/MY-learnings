@@ -10,4 +10,4 @@ const student={
 
 };
 student["age"]=27;
-console.log(student["age"]);
+console.log("age is "+student["age"]);
