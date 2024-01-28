@@ -14,23 +14,43 @@ boxes.forEach((box)=>{
            
         box.innerText="0";
         trun0=false;
+        box.style.color="yellow" ;
             
         }else if(box.innerText!="0"){
             box.innerText="X";
             trun0=true;
+            box.style.color="green" ;
           
         }
   
-    box.ariaDisabled=true;
+checkwinner();
     });
 });
 let checkwinner=()=>{
-if(boxes[0]==X&&boxes[x]==X&&boxes[2]==X){
+for(let val of winarr){
+    let val1=boxes[val[0]].innerText;
+    let val2=boxes[val[1]].innerText;
+    let val3=boxes[val[2]].innerText;
+console.log(val[0],val[1],val[2]);
+console.log(boxes[val[0]].innerText,boxes[val[1]].innerText,boxes[val[2]].innerText);
 
-alert("X winner");
+if(val1===val2&&val2===val3&&val1!=""){
+    alert("winner is "+val1);
+    for (let i = 0; i < boxes.length; i++) {
+        boxes[i].innerText = "";
+    }
+    console.log("clicked reset");
+};
+}
 
 }
 
 
+reset.onclick = () => {
+    for (let i = 0; i < boxes.length; i++) {
+        boxes[i].innerText = "";
+    }
+    console.log("clicked reset");
+};
 
-}
+
