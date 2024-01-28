@@ -1,4 +1,45 @@
-.a{
-    background-color: pink;
-    font-size: 300%;
+body{
+    margin: 0px;
+    padding: 0px;
+    text-align: center;
+     justify-content: center;
+}
+.main{
+    display: grid;
+    grid-template-columns:33.3% 33.3% 33.3%;
+    grid-template-rows:1fr 1fr 1fr;
+    
+    grid-column-gap: 2vh;
+    grid-row-gap:5vb;
+    
+    text-align: center;
+    justify-content: center;
+    margin-top: 1%;
+   position: absolute;
+   left: 30.0%;
+   right: 30%;
+   width: 80vb;
+   margin: 1%;
+}
+.container{
+    display: inline-block;
+    height: 20vh;
+    
+    text-align: center;
+    font-size: 15vb;
+    width: 25vb;
+    background-color:  rgb(218, 17, 17);
+    border-radius: 10%;
+   
+}
+.container:hover{
+    background-color: rgb(218, 17, 17);
+    box-shadow: 0rem 1rem 1rem rgba(74, 218, 17, 0.6);
+}
+#reset{
+    position: relative;
+    top: 75vb;
+    
+    text-align: center;
+    justify-content: center;
 }
