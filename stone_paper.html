@@ -4,21 +4,106 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>stone paper</title>
-    <link rel="stylesheet" href="style2.css">
+   <style>body{
+    background-color: rgba(55, 0, 255, 0.1);
+    justify-content: center;
+    justify-items: center;
+    text-align: center;
+}
+
+    .container{
+        display: grid;
+        grid-template-columns:30vb 30vb 30vb;
+        width: 90vb;
+        position: relative;
+        right: -25%;
+        justify-content: center;
+        justify-items: center;
+        text-align: center;
+    }
+    .img{
+        height: 25vh;
+        width: 25vb;
+       border-radius: 50%;
+    }
+
+    .img:hover{
+        box-shadow:0 1rem 1rem rgba(255, 0, 0, 0.5);
+        border-width: 100px;
+        border-color:rgba(255, 0, 0, 0.5) ;
+    }
+    .scr{
+        margin-top: 10vb;
+        font-size: 20vb;
+    }</style>
 </head>
 <body>
-    <div>
-        <div class="img"></div>
-        <div class="img"></div>
-        <div class="img"></div>
-        <div class="opt"></div>
-        <div class="opt"></div>
-        <div class="opt"></div>
-        <div class="scr"></div>
-        <div class="scr"></div>
-        <div class="scr"></div>
+    <h1>Rock paper scissors </h1>
+    <div class="container">
+        <div class="img" style="background-image: url('rock.png');
+        background-size: 100% 100%;background-repeat: no-repeat;" id="rock" ></div>
+        <div class="img" style="background-image: url('paper.png');
+        background-size: 100% 100%;background-repeat: no-repeat;"id="paper" ></div>
+        <div class="img" style="background-image: url('scissors.png');
+        background-size: 100% 100%;background-repeat: no-repeat;"id="scissors" ></div>
+        <div class="opt">Rock</div>
+        <div class="opt">Paper</div>
+        <div class="opt">Scissor</div>
+        <div class="scr" id="win">0</div>
+        <div class="scr" id="tie">0</div>
+        <div class="scr" id="lose">0</div>
+        <div >win</div>
+        <div >tie</div>
+        <div >lose</div>
     </div>
 
-    <script src="day10.js"></script>
+    <script >let win=0;
+        let lose=0;
+        let tie=0;
+        const choices=document.querySelectorAll(".img");
+        
+        let computersMove=(choiceid,)=>{
+            let move=null;
+             let num=Math.random()*3;
+             if(num<1&&num>0){
+                 move="rock";
+             }
+             else if(num>1&&num<2){
+               move="paper";
+             }else{
+                 move="scissors";
+             }
+        console.log(move);
+        
+        if(move==choiceid){
+            alert("TIE===> computer choose "+move);
+            tie++;
+            let t=document.querySelector("#tie");
+           console.log(t.innerText=tie);
+        }
+        else if((move=="paper"&&choiceid=="rock")||(move=="rock"&&choiceid=="scissors")||(move=="scissors"&&choiceid=="paper")){
+            alert("LOSE===> computer choose "+move);
+            lose++;
+            let t=document.querySelector("#lose");
+           console.log(t.innerText=lose);
+        }
+        else{
+            alert("WIN===> computer choose "+move);
+            win++;
+            let t=document.querySelector("#win");
+           console.log(t.innerText=win);
+        }
+        
+        }
+        
+        choices.forEach(choice => {
+            choice.addEventListener("click",()=>{
+             let choiceid=choice.getAttribute("id");
+                console.log("clicked "+choiceid);
+        computersMove(choiceid,);
+        
+            })
+            
+        });</script>
 </body>
 </html>
