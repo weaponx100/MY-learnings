@@ -2,6 +2,11 @@
     margin: 0px;
     padding: 0px;
  font-family: sans-serif;
+ box-sizing: border-box;
+}
+body {
+    margin: 0px;
+    padding: 0px;
 }
 
 #home{
@@ -27,6 +32,7 @@ padding: 1vb;
 position:sticky;
 top: 2vb;
 z-index: 100;
+font-size: 2vb;
 }
 #prime{
     display: flex;
@@ -57,12 +63,13 @@ z-index: 100;
    font-size: 10vb;
  
 }
-#p2{position: relative;
+#p2{position: absolute;
     top: 65%;
     left: 50%;
+    transform: translate(-55%,0%);
     color: white;
-   padding: 3vb;
-   transform: translate(-45vb,0%);
+   padding-top: 1.5vb;
+   
    
    font-size: 4vb;
    z-index: 3;
@@ -71,16 +78,15 @@ z-index: 100;
     position: relative;
     margin-top: 105vb;
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns:1fr 2fr ;
     grid-gap: 1vb;
-    justify-content: center;
-    margin-left: 100vb;
-    margin-right: 100vb;
+   margin-left: 30vmin;
     grid-column-gap: 2vb;
+    margin-right: 15%;
 }
 .products{
     width: 75vb;
-    height: 50vb;
+    height: 50vh;
     background-color: red;
     
 }
